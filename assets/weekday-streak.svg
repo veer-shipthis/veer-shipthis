@@ -3,7 +3,7 @@
 <line x1='195' y1='45' x2='195' y2='155' stroke='#FFFFFF' stroke-opacity='0.35'/>
 <line x1='365' y1='45' x2='365' y2='155' stroke='#FFFFFF' stroke-opacity='0.35'/>
 <circle cx='280' cy='88' r='42' fill='none' stroke='#70A5FD' stroke-width='4'/>
-<text x='110' y='98' text-anchor='middle' fill='#70A5FD' font-family="'Segoe UI', Ubuntu, sans-serif" font-size='34px' font-weight='700'>304</text>
+<text x='110' y='98' text-anchor='middle' fill='#70A5FD' font-family="'Segoe UI', Ubuntu, sans-serif" font-size='34px' font-weight='700'>303</text>
 <text x='110' y='140' text-anchor='middle' fill='#70A5FD' font-family="'Segoe UI', Ubuntu, sans-serif" font-size='13px' font-weight='600'>Active Weekdays</text>
 <text x='110' y='160' text-anchor='middle' fill='#38BDAE' font-family="'Segoe UI', Ubuntu, sans-serif" font-size='11px' font-weight='400'>Mon-Fri with commits</text>
 <text x='280' y='98' text-anchor='middle' fill='#FFFFFF' font-family="'Segoe UI', Ubuntu, sans-serif" font-size='30px' font-weight='700'>133</text>
