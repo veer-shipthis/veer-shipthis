@@ -98,8 +98,10 @@ def compute(days):
         elif current or date != weekdays[-1][0]:
             break
 
+    active_dates = [d for d, c in weekdays if c]
     return {
-        "active": sum(1 for _, c in weekdays if c),
+        "active": len(active_dates),
+        "since": active_dates[0] if active_dates else None,
         "current": current,
         "current_range": (current_start, current_end),
         "longest": longest,
@@ -125,25 +127,38 @@ def text(x, y, value, fill, size, weight="400"):
     )
 
 
+FLAME = (
+    "M 1.5 0.67 C 1.5 0.67 2.24 3.32 2.24 5.47 C 2.24 7.53 0.89 9.2 -1.17 9.2 C -3.23 9.2 -4.79 7.53 -4.79 5.47 "
+    "L -4.76 5.11 C -6.78 7.51 -8 10.62 -8 13.99 C -8 18.41 -4.42 22 0 22 C 4.42 22 8 18.41 8 13.99 C 8 8.6 5.41 3.79 1.5 0.67 Z "
+    "M -0.29 19 C -2.07 19 -3.51 17.6 -3.51 15.86 C -3.51 14.24 -2.46 13.1 -0.7 12.74 C 1.07 12.38 2.9 11.53 3.92 10.16 "
+    "C 4.31 11.45 4.51 12.81 4.51 14.2 C 4.51 16.85 2.36 19 -0.29 19 Z"
+)
+
+
 def render(stats):
     cols = [
-        (110, f"{stats['active']:,}", "Active Weekdays", "Mon-Fri with commits"),
+        (110, f"{stats['active']:,}", "Active Weekdays", f"{fmt(stats['since'])} - Present"),
         (280, str(stats["current"]), "Current Weekday Streak", fmt_range(stats["current_range"])),
         (450, str(stats["longest"]), "Longest Weekday Streak", fmt_range(stats["longest_range"])),
     ]
     parts = [
         "<svg xmlns='http://www.w3.org/2000/svg' width='560' height='200' viewBox='0 0 560 200'>",
+        "<defs><mask id='ring_behind_flame'>"
+        "<rect width='560' height='200' fill='white'/>"
+        "<ellipse cx='280' cy='49' rx='13' ry='18' fill='black'/>"
+        "</mask></defs>",
         f"<rect width='560' height='200' rx='6' fill='{BG}'/>",
-        f"<line x1='195' y1='45' x2='195' y2='155' stroke='{WHITE}' stroke-opacity='0.35'/>",
-        f"<line x1='365' y1='45' x2='365' y2='155' stroke='{WHITE}' stroke-opacity='0.35'/>",
-        f"<circle cx='280' cy='88' r='42' fill='none' stroke='{BLUE}' stroke-width='4'/>",
+        f"<line x1='195' y1='48' x2='195' y2='158' stroke='{WHITE}' stroke-opacity='0.35'/>",
+        f"<line x1='365' y1='48' x2='365' y2='158' stroke='{WHITE}' stroke-opacity='0.35'/>",
+        f"<circle cx='280' cy='87' r='38' fill='none' stroke='{BLUE}' stroke-width='4' mask='url(#ring_behind_flame)'/>",
+        f"<g transform='translate(280, 38)'><path d='{FLAME}' fill='{BLUE}'/></g>",
     ]
     for x, value, label, sub in cols:
         colour = PURPLE if x == 280 else BLUE
         parts.append(text(x, 98, value, WHITE if x == 280 else colour, 34 if x != 280 else 30, "700"))
-        parts.append(text(x, 140, label, colour, 13, "600"))
-        parts.append(text(x, 160, sub, TEAL, 11))
-    parts.append(text(280, 186, "* Weekends excluded from streaks", TEAL, 10))
+        parts.append(text(x, 146, label, colour, 13, "600"))
+        parts.append(text(x, 165, sub, TEAL, 11))
+    parts.append(text(280, 189, "* Weekends excluded from streaks", TEAL, 10))
     parts.append("</svg>")
     return "\n".join(parts)
 
