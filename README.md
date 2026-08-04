@@ -29,11 +29,11 @@
 
 ---
 
-## 🔥 Weekday Streak (Mon–Fri)
+## 🔥 Streak
 
 <div align="center">
 
-<img src="https://streak-stats.demolab.com?user=veer-shipthis&theme=tokyonight&hide_border=true&exclude_days=Sun,Sat" alt="GitHub Weekday Streak (Mon-Fri)" />
+<img src="https://streak-stats.demolab.com?user=veer-shipthis&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
 
 </div>
 
