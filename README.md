@@ -39,6 +39,16 @@
 
 ---
 
+## 📅 Weekday Streak (Mon–Fri)
+
+<div align="center">
+
+<img src="./assets/weekday-streak.svg" alt="Weekday streak, weekends excluded" width="560" />
+
+</div>
+
+---
+
 ## 📈 Contribution Graph
 
 <div align="center">

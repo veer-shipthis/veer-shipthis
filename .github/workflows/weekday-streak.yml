@@ -1,0 +1,35 @@
+name: Weekday streak
+
+on:
+  schedule:
+    - cron: "0 18 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Rebuild card
+        env:
+          # A PAT with read:user also counts private contributions; GITHUB_TOKEN sees only public ones.
+          STREAK_TOKEN: ${{ secrets.STREAK_TOKEN || github.token }}
+          STREAK_LOGIN: ${{ github.repository_owner }}
+        run: python scripts/weekday_streak.py
+
+      - name: Commit if changed
+        run: |
+          if [[ -n "$(git status --porcelain assets/weekday-streak.svg)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore: refresh weekday streak card" assets/weekday-streak.svg
+            git push
+          fi
