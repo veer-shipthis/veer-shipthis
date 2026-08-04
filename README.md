@@ -43,7 +43,7 @@
 
 <div align="center">
 
-<img src="./assets/weekday-streak.svg" alt="Weekday streak, weekends excluded" width="560" />
+<img src="https://raw.githubusercontent.com/veer-shipthis/veer-shipthis/main/assets/weekday-streak.svg" alt="Weekday streak, weekends excluded" width="560" />
 
 </div>
 
