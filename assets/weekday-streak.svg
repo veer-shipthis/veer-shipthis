@@ -8,9 +8,9 @@
 <text x='110' y='98' text-anchor='middle' fill='#70A5FD' font-family="'Segoe UI', Ubuntu, sans-serif" font-size='34px' font-weight='700'>363</text>
 <text x='110' y='146' text-anchor='middle' fill='#70A5FD' font-family="'Segoe UI', Ubuntu, sans-serif" font-size='13px' font-weight='600'>Active Weekdays</text>
 <text x='110' y='165' text-anchor='middle' fill='#38BDAE' font-family="'Segoe UI', Ubuntu, sans-serif" font-size='11px' font-weight='400'>Sep 19, 2024 - Present</text>
-<text x='280' y='98' text-anchor='middle' fill='#FFFFFF' font-family="'Segoe UI', Ubuntu, sans-serif" font-size='30px' font-weight='700'>3</text>
+<text x='280' y='98' text-anchor='middle' fill='#FFFFFF' font-family="'Segoe UI', Ubuntu, sans-serif" font-size='30px' font-weight='700'>0</text>
 <text x='280' y='146' text-anchor='middle' fill='#BF91F3' font-family="'Segoe UI', Ubuntu, sans-serif" font-size='13px' font-weight='600'>Current Weekday Streak</text>
-<text x='280' y='165' text-anchor='middle' fill='#38BDAE' font-family="'Segoe UI', Ubuntu, sans-serif" font-size='11px' font-weight='400'>Nov 4, 2026 - Nov 6, 2026</text>
+<text x='280' y='165' text-anchor='middle' fill='#38BDAE' font-family="'Segoe UI', Ubuntu, sans-serif" font-size='11px' font-weight='400'>—</text>
 <text x='450' y='98' text-anchor='middle' fill='#70A5FD' font-family="'Segoe UI', Ubuntu, sans-serif" font-size='34px' font-weight='700'>133</text>
 <text x='450' y='146' text-anchor='middle' fill='#70A5FD' font-family="'Segoe UI', Ubuntu, sans-serif" font-size='13px' font-weight='600'>Longest Weekday Streak</text>
 <text x='450' y='165' text-anchor='middle' fill='#38BDAE' font-family="'Segoe UI', Ubuntu, sans-serif" font-size='11px' font-weight='400'>Jan 30, 2026 - Aug 4, 2026</text>
